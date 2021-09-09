@@ -1,7 +1,11 @@
 #!/bin/bash
 
 FILETWO=./two.txt
-FILETWO=./one.txt
+echo "$FILETWO"
+
+counter=1
+while [ $counter -le 10 ]
+do
 
 if test -f "$FILETWO"; then
   mv two.txt one.txt
@@ -14,3 +18,7 @@ git add .
 git commit -m "commit" 
 
 git push origin master
+
+((counter++))
+
+done
